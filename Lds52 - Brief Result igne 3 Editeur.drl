@@ -1,0 +1,59 @@
+rule "Primo VE - Lds52"
+// Editeur pour affichage dans la brief result
+	when
+	    MARC is "210"."c" AND 
+		MARC."210".ind"1" equals "#"  
+		AND NOT (MARC is "105"."a" AND MARC."105"."a" match "^.{3,8}[m7].*")
+	then
+		set TEMP"1" to MARC "210" subfields "c" delimited by ", " remove substring using regex "(/|:|;|=|,)+$" 	
+		add suffix (TEMP"1"," : ")
+		set pnx."display"."lds52" to TEMP"1"  
+end
+
+rule "Primo VE - Lds52/2"
+// Editeur pour affichage dans la brief result
+	when
+	    MARC is "210"."c" AND 
+		MARC."210".ind"1" equals "1"  
+		AND NOT (MARC is "105"."a" AND MARC."105"."a" match "^.{3,8}[m7].*")
+	then
+		set TEMP"1" to MARC "210" subfields "c" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"	
+		add suffix (TEMP"1"," : ")
+		set pnx."display"."lds52" to TEMP"1"  
+end
+
+rule "Primo VE - Lds52/3"
+// Editeur pour affichage dans la brief result
+	when
+	    MARC is "214"."c" AND 
+		MARC."214".ind"1" equals "#"  
+		AND NOT (MARC is "105"."a" AND MARC."105"."a" match "^.{3,8}[m7].*")
+	then
+		set TEMP"1" to MARC "214" subfields "c" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
+		add suffix (TEMP"1"," : ")
+		set pnx."display"."lds52" to TEMP"1"  
+end
+
+rule "Primo VE - Lds52/4"
+// Editeur pour affichage dans la brief result
+	when
+	    MARC is "214"."c" AND 
+		MARC."214".ind"2" equals "0"  
+		AND NOT (MARC is "105"."a" AND MARC."105"."a" match "^.{3,8}[m7].*")
+	then
+		set TEMP"1" to MARC "214" subfields "c" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
+		add suffix (TEMP"1"," : ")
+		set pnx."display"."lds52" to TEMP"1"  
+end
+
+rule "Primo VE - Lds52/5"
+// Editeur pour affichage dans la brief result
+	when
+	    MARC is "214"."c" AND 
+		MARC."214".ind"1" equals "1"  
+		AND NOT (MARC is "105"."a" AND MARC."105"."a" match "^.{3,8}[m7].*")
+	then
+		set TEMP"1" to MARC "214" subfields "c" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
+		add suffix (TEMP"1"," : ")
+		set pnx."display"."lds52" to TEMP"1"  
+end
