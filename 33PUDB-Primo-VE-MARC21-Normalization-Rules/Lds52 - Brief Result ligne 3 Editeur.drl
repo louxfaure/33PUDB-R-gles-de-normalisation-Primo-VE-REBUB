@@ -14,6 +14,7 @@ priority 10
         remove leading and trailing spaces (TEMP"1")
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
+        add suffix (TEMP"1"," : ")
 	    set pnx."display"."lds52" to TEMP"1"
 end
 
@@ -34,6 +35,7 @@ priority 20
         remove leading and trailing spaces (TEMP"1")
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
+        add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
 end
 
@@ -52,6 +54,7 @@ priority 30
         remove leading and trailing spaces (TEMP"1")
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
+        add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
 end
 
@@ -70,5 +73,6 @@ priority 40
         remove leading and trailing spaces (TEMP"1")
         remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
+        add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
 end
