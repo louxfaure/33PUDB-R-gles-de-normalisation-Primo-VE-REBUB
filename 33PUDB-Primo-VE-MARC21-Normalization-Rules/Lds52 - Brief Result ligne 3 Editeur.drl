@@ -4,7 +4,7 @@ priority 10
 		MARC."260" has any "a,b" AND
 		MARC."260".ind"1"  equals "3"
 	then
-	    set TEMP"1" to MARC."260" sub without sort "a,b"
+	    set TEMP"1" to MARC."260" subfields "b" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
 	    remove string (TEMP"1","<<")
         remove string (TEMP"1",">>")
         remove string (TEMP"1","\\(")
@@ -12,7 +12,6 @@ priority 10
         remove string (TEMP"1","\\[")
         remove string (TEMP"1","\\]")
         remove leading and trailing spaces (TEMP"1")
-        remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
         add suffix (TEMP"1"," : ")
 	    set pnx."display"."lds52" to TEMP"1"
@@ -25,7 +24,7 @@ priority 20
 		MARC."264".ind"1"  equals "3" AND
 		MARC."264".ind"2"  equals "1"
 	then
-	    set TEMP"1" to MARC."264" sub without sort "a,b"
+	    set TEMP"1" to MARC."264" subfields "b" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
 	    remove string (TEMP"1","<<")
         remove string (TEMP"1",">>")
         remove string (TEMP"1","\\(")
@@ -33,7 +32,6 @@ priority 20
         remove string (TEMP"1","\\[")
         remove string (TEMP"1","\\]")
         remove leading and trailing spaces (TEMP"1")
-        remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
         add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
@@ -44,7 +42,7 @@ priority 30
 	when
 		MARC."260" has any "a,b"
 	then
-	    set TEMP"1" to MARC."260" sub without sort "a,b"
+	    set TEMP"1" to MARC."260" subfields "b" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
 	    remove string (TEMP"1","<<")
         remove string (TEMP"1",">>")
         remove string (TEMP"1","\\(")
@@ -52,7 +50,6 @@ priority 30
         remove string (TEMP"1","\\[")
         remove string (TEMP"1","\\]")
         remove leading and trailing spaces (TEMP"1")
-        remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
         add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
@@ -63,7 +60,7 @@ priority 40
 	when
 		MARC."264" has any "a,b"
 	then
-	    set TEMP"1" to MARC."264" sub without sort "a,b"
+	    set TEMP"1" to MARC."264" subfields "b" delimited by ", " remove substring using regex "(/|:|;|=|,)+$"
 	    remove string (TEMP"1","<<")
         remove string (TEMP"1",">>")
         remove string (TEMP"1","\\(")
@@ -71,7 +68,6 @@ priority 40
         remove string (TEMP"1","\\[")
         remove string (TEMP"1","\\]")
         remove leading and trailing spaces (TEMP"1")
-        remove substring using regex (TEMP"1","(/|:|;|=|,)+$")
         replace spaces (TEMP"1"," ")
         add suffix (TEMP"1"," : ")
 		set pnx."display"."lds52" to TEMP"1"
